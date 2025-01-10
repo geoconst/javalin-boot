@@ -1,4 +1,4 @@
-package com.yexh;
+package com.yexh.app;
 
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.activerecord.generator.Generator;
@@ -6,7 +6,7 @@ import com.jfinal.plugin.hikaricp.HikariCpPlugin;
 
 import javax.sql.DataSource;
 
-public class DBGen {
+public class _DBGen {
     public static DataSource getDataSource() {
         var jdbcUrl = "jdbc:mysql://localhost/games-testtable";
         HikariCpPlugin hp = new HikariCpPlugin(jdbcUrl, "root", "root");

@@ -1,10 +1,11 @@
-package com.yexh;
+package com.yexh.app;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.hikaricp.HikariCpPlugin;
 import com.yexh.model._MappingKit;
 import com.yexh.module.test.TestController;
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 import io.javalin.rendering.template.JavalinJte;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,11 @@ public class Application {
     private static Javalin initServer() {
         var server = Javalin.create(config -> {
             config.fileRenderer(new JavalinJte());
+            config.staticFiles.add(staticFileConfig -> {
+                staticFileConfig.hostedPath = "/";
+                staticFileConfig.directory = "/static";
+                staticFileConfig.location = Location.CLASSPATH;
+            });
             config.requestLogger.http((ctx, ws) -> {
                 logger.info(ctx.fullUrl());
             });
