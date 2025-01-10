@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import java.nio.charset.StandardCharsets;
 
-public class Server {
-    private static final Logger logger = LoggerFactory.getLogger(Server.class);
+public class ServerInitor {
+    private static final Logger logger = LoggerFactory.getLogger(ServerInitor.class);
 
     // 初始化javalin
     public static Javalin initServer() {

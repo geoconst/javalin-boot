@@ -6,7 +6,7 @@ import com.yexh.model._MappingKit;
 
 import java.util.Properties;
 
-public class DB {
+public class DBInitor {
     // 初始化数据库连接
     public static void initActiveRecord(Properties p) {
         String jdbcurl = p.getProperty("dbjdbcurl");
