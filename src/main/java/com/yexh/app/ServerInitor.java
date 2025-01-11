@@ -15,6 +15,7 @@ public class ServerInitor {
     // 初始化javalin
     public static Javalin initServer() {
         var server = Javalin.create(config -> {
+            config.useVirtualThreads = true;
             config.fileRenderer(new JavalinJte());
             config.staticFiles.add(staticFileConfig -> {
                 staticFileConfig.hostedPath = "/";
